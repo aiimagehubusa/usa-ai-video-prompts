@@ -1,132 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>50 Viral Funny Food & Animal AI Prompts | USA Trending</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="50 Viral USA Trending Funny Food, Vegetable & Animal Pixar-Style AI Video Prompts for Google Flow & Grok AI. Copy & Use Instantly.">
-  <meta name="keywords" content="AI video prompt, Pixar style animation prompt, funny food AI, viral USA AI prompts, Google Flow prompt, Grok AI prompt">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funny Food & Animal AI Prompts | Multi-Language</title>
+<meta name="description" content="50+ Viral AI Prompts (Short & Long) for Funny Food, Vegetable & Animal Pixar-Style Videos. USA + Multi-language dialogue support.">
+<meta name="keywords" content="AI video prompt, Pixar style animation, short video, long video, funny food AI, animals, vegetables, Google Flow, Grok AI">
 <style>
-body{
-  font-family:Arial, sans-serif;
-  background:#0f0f1a;
-  color:white;
-  padding:20px;
-  text-align:center;
-}
-h1{
-  color:#00c3ff;
-}
-input{
-  width:90%;
-  max-width:500px;
-  padding:12px;
-  border-radius:30px;
-  border:none;
-  margin:20px 0;
-}
-.card{
-  background:#1c1c2e;
-  padding:20px;
-  border-radius:15px;
-  margin:15px auto;
-  max-width:750px;
-  text-align:left;
-  box-shadow:0 0 10px rgba(255,255,255,0.1);
-}
-.food{
-  font-size:1.3rem;
-  font-weight:bold;
-  color:#ffcc00;
-}
-textarea{
-  width:100%;
-  background:#2a2a3a;
-  color:white;
-  border:none;
-  border-radius:10px;
-  padding:10px;
-  margin-top:10px;
-}
-button{
-  margin-top:10px;
-  padding:10px 20px;
-  border:none;
-  border-radius:25px;
-  background:#00c3ff;
-  font-weight:bold;
-  cursor:pointer;
-}
-button:hover{
-  background:#33d6ff;
-}
+body { font-family:Arial,sans-serif; background:#0f0f1a; color:white; margin:0; padding:0; text-align:center; }
+h1,h2 { color:#00c3ff; margin:10px 0; }
+.generator-section { background:#1e1e2f; padding:20px; border-radius:15px; margin:20px auto; max-width:900px; }
+input, select, button { padding:12px 15px; border-radius:30px; border:none; margin:10px 5px; }
+button { cursor:pointer; font-weight:bold; background:#00c3ff; color:black; transition:0.3s; }
+button:hover { background:#33d6ff; }
+.prompt-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; padding:10px; max-width:1000px; margin:auto; }
+.prompt-card { background:#2a2a3a; padding:15px; border-radius:15px; border-left:5px solid #ff7b00; cursor:pointer; position:relative; transition:0.3s; }
+.prompt-card:hover { transform:scale(1.02); background:#33334a; }
+textarea { width:100%; border:none; border-radius:10px; padding:10px; margin-top:10px; background:#2a2a3a; color:white; font-family:monospace; }
+.copy-indicator { position:absolute; top:10px; right:10px; background:#4caf50; color:white; border-radius:50%; width:24px; height:24px; display:flex; justify-content:center; align-items:center; font-size:14px; opacity:0; transition:0.3s; }
+.prompt-card:hover .copy-indicator { opacity:1; }
+footer { padding:20px; background:#12121f; color:#888; }
+footer a { color:#aaa; margin:0 10px; text-decoration:none; }
+footer a:hover { color:#ff7b00; }
 </style>
 </head>
-
 <body>
 
-<h1>🔥 50 Viral Funny Food & Animal AI Prompts</h1>
-<p>USA Trending | Pixar 3D Medical Animation Style</p>
+<h1>🔥 FunnyFood AI Prompts</h1>
+<p>Multi-language dialogue | Short & Long Video | Pixar 3D Style</p>
 
-<input type="text" id="searchBox" placeholder="Search... (Apple, Dog, Carrot)">
+<div class="generator-section">
+<input type="text" id="searchBox" placeholder="Search (Apple, Dog, Carrot)">
+<select id="categoryFilter">
+  <option value="all">All Categories</option>
+  <option value="fruits">Fruits</option>
+  <option value="vegetables">Vegetables</option>
+  <option value="animals">Animals</option>
+</select>
+<select id="promptType">
+  <option value="short">Short Video (20-30 sec)</option>
+  <option value="long">Long Video (5-6 min)</option>
+</select>
+</div>
 
-<div id="promptList"></div>
+<div class="prompt-grid" id="promptGrid"></div>
+
+<footer>
+<div>
+<a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Contact Us</a>
+</div>
+<div>© <script>document.write(new Date().getFullYear())</script> FunnyFood AI | <a href="https://funnyaivideos.blogspot.com/" target="_blank">Blogger Site</a></div>
+</footer>
 
 <script>
-
-const baseText = (name) => `
-Food/Animal Name: ${name}.
-You are an expert text-to-video prompt engineer.
-Generate ONE ready-to-use vertical 9:16 text-to-video prompt.
-The ${name} must be fully anthropomorphic with human eyes, lips, hands, and legs.
-Scene takes place inside realistic human heart and artery medical environment.
-The ${name} holds a shiny shield and blocks harmful cholesterol plaque.
-The plaque visibly cracks, breaks, and completely disappears.
-Camera completely static.
-Style: High-quality Pixar-style 3D medical animation, cinematic lighting.
-No watermark, no on-screen text.
-Dialogue must be exactly:
-“Ami ${name.toLowerCase()} ami apnar cholesterol saaf kori ha ha ha.”
-`;
-
 const items = [
-"Apple","Banana","Orange","Mango","Strawberry","Blueberry","Pineapple","Watermelon","Grapes","Cherry",
-"Tomato","Carrot","Broccoli","Spinach","Cucumber","Potato","Onion","Garlic","Capsicum","Corn",
-"Milk Bottle","Egg","Cheese","Yogurt","Almond","Peanut","Walnut","Honey","Green Tea","Fish",
-"Chicken","Salmon","Avocado","Lemon","Kiwi","Papaya","Pear","Peach","Dragon Fruit","Coconut",
-"Dog","Cat","Rabbit","Panda","Lion","Tiger","Elephant","Monkey","Dolphin","Fox"
+{ name:"Apple", category:"fruits" },
+{ name:"Banana", category:"fruits" },
+{ name:"Orange", category:"fruits" },
+{ name:"Mango", category:"fruits" },
+{ name:"Carrot", category:"vegetables" },
+{ name:"Broccoli", category:"vegetables" },
+{ name:"Tomato", category:"vegetables" },
+{ name:"Potato", category:"vegetables" },
+{ name:"Onion", category:"vegetables" },
+{ name:"Garlic", category:"vegetables" },
+{ name:"Dog", category:"animals" },
+{ name:"Cat", category:"animals" },
+{ name:"Lion", category:"animals" },
+{ name:"Tiger", category:"animals" },
+{ name:"Elephant", category:"animals" },
+{ name:"Rabbit", category:"animals" },
+{ name:"Panda", category:"animals" },
+{ name:"Strawberry", category:"fruits" },
+{ name:"Blueberry", category:"fruits" },
+{ name:"Pineapple", category:"fruits" },
+{ name:"Watermelon", category:"fruits" },
+{ name:"Grapes", category:"fruits" },
+{ name:"Cherry", category:"fruits" },
+{ name:"Milk Bottle", category:"fruits" },
+{ name:"Egg", category:"fruits" },
+{ name:"Cheese", category:"fruits" },
+{ name:"Yogurt", category:"fruits" },
+{ name:"Almond", category:"fruits" },
+{ name:"Peanut", category:"fruits" },
+{ name:"Walnut", category:"fruits" },
+{ name:"Honey", category:"fruits" },
+{ name:"Green Tea", category:"fruits" },
+{ name:"Fish", category:"animals" },
+{ name:"Chicken", category:"animals" },
+{ name:"Salmon", category:"animals" },
+{ name:"Avocado", category:"fruits" },
+{ name:"Lemon", category:"fruits" },
+{ name:"Kiwi", category:"fruits" },
+{ name:"Papaya", category:"fruits" },
+{ name:"Pear", category:"fruits" },
+{ name:"Peach", category:"fruits" },
+{ name:"Dragon Fruit", category:"fruits" },
+{ name:"Coconut", category:"fruits" }
 ];
 
+const shortPrompt = (name) => `
+Food/Animal: ${name}
+Anthropomorphic, Pixar 3D animation
+Short video 20-30 sec
+Static camera, cinematic lighting
+Dialogue: "I am ${name}, I clean your cholesterol, ha ha ha." (English default)
+Or any language user prefers
+`;
+
+const longPrompt = (name) => `
+Food/Animal: ${name}
+Anthropomorphic, Pixar 3D animation
+Long video 5-6 minutes, multiple scenes
+Static camera, cinematic lighting
+Scene inside human body: heart, blood vessels, realistic medical environment
+Shield blocks harmful cholesterol plaque, breaks apart, disappears
+Character expressions, fun interactions, storytelling included
+Dialogue: "I am ${name}, I clean your cholesterol, ha ha ha." (English default)
+Or any language user prefers
+`;
+
 function showPrompts(list){
-  document.getElementById("promptList").innerHTML="";
-  list.forEach((name,i)=>{
-    document.getElementById("promptList").innerHTML += `
-      <div class="card">
-        <div class="food">${name}</div>
-        <textarea rows="8" id="prompt${i}">${baseText(name)}</textarea>
-        <button onclick="copyPrompt(${i})">Copy Prompt</button>
+  const type = document.getElementById("promptType").value;
+  const container = document.getElementById("promptGrid");
+  container.innerHTML = "";
+  list.forEach((item,i)=>{
+    const promptText = type=="short" ? shortPrompt(item.name) : longPrompt(item.name);
+    container.innerHTML += `
+      <div class="prompt-card">
+        <div class="food-name">${item.name} (${item.category})</div>
+        <textarea rows="10">${promptText}</textarea>
+        <span class="copy-indicator">📋</span>
       </div>
     `;
   });
 }
 
-function copyPrompt(i){
-  let box=document.getElementById("prompt"+i);
-  box.select();
-  document.execCommand("copy");
-  alert("Prompt Copied!");
-}
+// Copy prompt when clicked
+document.addEventListener("click", function(e){
+  const card = e.target.closest(".prompt-card");
+  if(card){
+    const textarea = card.querySelector("textarea");
+    textarea.select();
+    document.execCommand("copy");
+    alert("Prompt Copied! Ready to paste in AI tool.");
+  }
+});
 
+// Search, Filter & Prompt Type change
 document.getElementById("searchBox").addEventListener("keyup", function(){
-  let value=this.value.toLowerCase();
-  let filtered=items.filter(item=>item.toLowerCase().includes(value));
+  const val = this.value.toLowerCase();
+  const filtered = items.filter(p => p.name.toLowerCase().includes(val));
+  showPrompts(filtered);
+});
+document.getElementById("categoryFilter").addEventListener("change", function(){
+  const val = this.value;
+  const filtered = val=="all" ? items : items.filter(p=>p.category==val);
+  showPrompts(filtered);
+});
+document.getElementById("promptType").addEventListener("change", function(){
+  const filtered = items; // current items
   showPrompts(filtered);
 });
 
+// Initial display
 showPrompts(items);
-
 </script>
-
 </body>
 </html>
