@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>50 Viral Funny Food & Animal AI Prompts | USA Trending</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="50 Viral USA Trending Funny Food, Vegetable & Animal Pixar-Style AI Video Prompts for Google Flow & Grok AI. Copy & Use Instantly.">
+  <meta name="keywords" content="AI video prompt, Pixar style animation prompt, funny food AI, viral USA AI prompts, Google Flow prompt, Grok AI prompt">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#0f0f1a;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+h1{
+  color:#00c3ff;
+}
+input{
+  width:90%;
+  max-width:500px;
+  padding:12px;
+  border-radius:30px;
+  border:none;
+  margin:20px 0;
+}
+.card{
+  background:#1c1c2e;
+  padding:20px;
+  border-radius:15px;
+  margin:15px auto;
+  max-width:750px;
+  text-align:left;
+  box-shadow:0 0 10px rgba(255,255,255,0.1);
+}
+.food{
+  font-size:1.3rem;
+  font-weight:bold;
+  color:#ffcc00;
+}
+textarea{
+  width:100%;
+  background:#2a2a3a;
+  color:white;
+  border:none;
+  border-radius:10px;
+  padding:10px;
+  margin-top:10px;
+}
+button{
+  margin-top:10px;
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  background:#00c3ff;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{
+  background:#33d6ff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔥 50 Viral Funny Food & Animal AI Prompts</h1>
+<p>USA Trending | Pixar 3D Medical Animation Style</p>
+
+<input type="text" id="searchBox" placeholder="Search... (Apple, Dog, Carrot)">
+
+<div id="promptList"></div>
+
+<script>
+
+const baseText = (name) => `
+Food/Animal Name: ${name}.
+You are an expert text-to-video prompt engineer.
+Generate ONE ready-to-use vertical 9:16 text-to-video prompt.
+The ${name} must be fully anthropomorphic with human eyes, lips, hands, and legs.
+Scene takes place inside realistic human heart and artery medical environment.
+The ${name} holds a shiny shield and blocks harmful cholesterol plaque.
+The plaque visibly cracks, breaks, and completely disappears.
+Camera completely static.
+Style: High-quality Pixar-style 3D medical animation, cinematic lighting.
+No watermark, no on-screen text.
+Dialogue must be exactly:
+“Ami ${name.toLowerCase()} ami apnar cholesterol saaf kori ha ha ha.”
+`;
+
+const items = [
+"Apple","Banana","Orange","Mango","Strawberry","Blueberry","Pineapple","Watermelon","Grapes","Cherry",
+"Tomato","Carrot","Broccoli","Spinach","Cucumber","Potato","Onion","Garlic","Capsicum","Corn",
+"Milk Bottle","Egg","Cheese","Yogurt","Almond","Peanut","Walnut","Honey","Green Tea","Fish",
+"Chicken","Salmon","Avocado","Lemon","Kiwi","Papaya","Pear","Peach","Dragon Fruit","Coconut",
+"Dog","Cat","Rabbit","Panda","Lion","Tiger","Elephant","Monkey","Dolphin","Fox"
+];
+
+function showPrompts(list){
+  document.getElementById("promptList").innerHTML="";
+  list.forEach((name,i)=>{
+    document.getElementById("promptList").innerHTML += `
+      <div class="card">
+        <div class="food">${name}</div>
+        <textarea rows="8" id="prompt${i}">${baseText(name)}</textarea>
+        <button onclick="copyPrompt(${i})">Copy Prompt</button>
+      </div>
+    `;
+  });
+}
+
+function copyPrompt(i){
+  let box=document.getElementById("prompt"+i);
+  box.select();
+  document.execCommand("copy");
+  alert("Prompt Copied!");
+}
+
+document.getElementById("searchBox").addEventListener("keyup", function(){
+  let value=this.value.toLowerCase();
+  let filtered=items.filter(item=>item.toLowerCase().includes(value));
+  showPrompts(filtered);
+});
+
+showPrompts(items);
+
+</script>
+
+</body>
+</html>
